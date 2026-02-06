@@ -1,4 +1,4 @@
-# MDFlex
+# <img src="images/mdflex.svg" width="32" height="32" alt="MDFlex Logo"> MDFlex
 
 A simplistic, modern markdown reader and editor built with Python, PyQt6 and Claude credits.
 
