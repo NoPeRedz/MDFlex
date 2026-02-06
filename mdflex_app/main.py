@@ -1129,6 +1129,26 @@ class MDFlex(QMainWindow):
                 self.update_preview()
             except Exception as e:
                 QMessageBox.critical(self, "Error", f"Could not open file:\n{str(e)}")
+    
+    def load_file(self, file_path, switch_to_read_mode=False):
+        """Load a file directly without dialog. Used for command-line arguments."""
+        try:
+            with open(file_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+            self.editor.setPlainText(content)
+            self.current_file = file_path
+            self.is_modified = False
+            self.update_window_title()
+            self.update_preview()
+            
+            # Switch to read mode if requested (e.g., when opened from file manager)
+            if switch_to_read_mode and self.is_edit_mode:
+                self.toggle_mode()
+                
+            return True
+        except Exception as e:
+            QMessageBox.critical(self, "Error", f"Could not open file:\n{str(e)}")
+            return False
                 
     def save_file(self):
         """Save the current file."""
@@ -1390,6 +1410,14 @@ def main():
     
     window = MDFlex()
     window.show()
+    
+    # Check for file argument (e.g., when double-clicking a .md file)
+    # sys.argv[0] is the script name, sys.argv[1] would be the file path
+    if len(sys.argv) > 1:
+        file_path = sys.argv[1]
+        if os.path.isfile(file_path):
+            # Load the file and switch to read mode
+            window.load_file(file_path, switch_to_read_mode=True)
     
     sys.exit(app.exec())
 
