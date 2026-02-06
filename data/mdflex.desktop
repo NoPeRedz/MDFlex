@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=MDFlex
+Comment=A simplistic, modern markdown reader and editor
+Exec=mdflex %F
+Icon=mdflex
+Terminal=false
+Type=Application
+Categories=Office;TextEditor;Utility;
+MimeType=text/markdown;text/x-markdown;text/plain;
+Keywords=markdown;editor;text;document;notes;
+StartupNotify=true
+StartupWMClass=mdflex

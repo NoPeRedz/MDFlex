@@ -1,0 +1,4 @@
+include README.md
+include LICENSE
+recursive-include mdflex_app/icons *.svg
+recursive-include data *
