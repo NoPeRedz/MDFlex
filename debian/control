@@ -1,0 +1,35 @@
+Source: mdflex
+Section: editors
+Priority: optional
+Maintainer: Redz <redzdev@pm.me>
+Build-Depends: debhelper-compat (= 13),
+               dh-python,
+               python3-all,
+               python3-setuptools,
+               python3-pyqt6,
+               python3-pyqt6.qtwebengine,
+               python3-markdown
+Standards-Version: 4.6.0
+Homepage: https://github.com/redz/mdflex
+Rules-Requires-Root: no
+
+Package: mdflex
+Architecture: all
+Depends: ${python3:Depends},
+         ${misc:Depends},
+         python3-pyqt6,
+         python3-pyqt6.qtwebengine,
+         python3-markdown,
+         python3-pygments
+Description: A simplistic, modern markdown reader and editor
+ MDFlex is a clean, modern application for reading and
+ editing markdown documents. It features:
+ .
+  * Live preview of markdown content
+  * Dark and light theme support
+  * Read and write mode toggle
+  * Full markdown syntax support
+  * Export to HTML
+  * Word and character count
+ .
+ Built with Python and PyQt6 for a native desktop experience.

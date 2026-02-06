@@ -1,0 +1,12 @@
+mdflex (1.0.0-1) unstable; urgency=medium
+
+  * Initial release.
+  * Features:
+    - Live markdown preview
+    - Dark and light theme support
+    - Read and write mode toggle
+    - Full markdown syntax support
+    - Export to HTML
+    - Word and character count
+
+ -- Redz <redzdev@pm.me>  Wed, 05 Feb 2026 23:00:00 +0100
